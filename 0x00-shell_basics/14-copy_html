@@ -1,0 +1,2 @@
+#!/bin/bash
+find "$(pwd)" -maxdepth 1 -type f -name "*.html" -exec sh -c 'dest_file="$(dirname "$(pwd)")/$(basename "$1")" && [[ ! -e "$dest_file" ]] || [[ "$1" -nt "$dest_file" ]] && cp "$1" "$dest_file"' _ {} \;
