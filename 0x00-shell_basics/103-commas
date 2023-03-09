@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -A1v | sed -e 's/$/,/' -e '/\/$/s/$/,/' | tr '\n' ',' | sed 's/,$/\n/' | sed 's/\.\//. /g' | sed 's/\.\.\//.. /g' | sort -d -f -t'/' -k1,1 | sed 's/, /\n/g'
+ls -A1v | sed -e 's/$/,/' -e '/\/$/s/$/,/' | tr '\n' ',' | sed 's/,$/\n/' | sed 's/\.\//. /g' | sed 's/\.\.\//.. /g' | sort -d -f -t'/' -k1,1 | sed 's/,$//' | sed '1s/^/.,/' | tr ',' '\n' | sed '/^.$/d'
