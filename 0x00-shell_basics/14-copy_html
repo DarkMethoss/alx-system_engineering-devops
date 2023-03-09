@@ -1,3 +1,2 @@
 #!/bin/bash
 cp -ru --update --no-clobber --target-directory="$(dirname "$(pwd)")" -- *.html
-
